@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+            {%block title%}
+            {%endblock%}
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body{
+        background: #c5d7e8;
+        font-family: 'Dancing Script', cursive;
+        }
+        .container{
+        padding: 0 100px;
+
+        }
+        .todo-para{
+            background: #F7F7F7;
+            padding: 10px 50px;
+            box-shadow: 0px 0px 17px #054277;
+
+        }
+        .todo-image{
+            height: 60px;
+        }
+        .todos{
+            font-size: 50px;
+
+        }
+        .main-container{
+            background: #F7F7F7;
+            padding:30px;
+            box-shadow: 0px 0px 17px #054277;
+        }
+        .saying-para{
+            text-align: center;
+            background: #F7F7F7;
+            padding: 10px 50px;
+            margin: 15px 0;
+            box-shadow: 0px 0px 17px #054277;
+            }
+        .saying{
+            color: #054277;
+            display:block;
+        }
+        label{
+            display: block;
+            font-size: 20px;
+            padding: 10px 0 !important;
+        }
+        input[type=text],
+        input[type=password],
+        textarea
+        {
+            border: 1px solid #c5d7e8;
+            background-color: #c5d7e8 !important;
+            padding:10px;
+            border-radius:5px;
+            width:80%;
+            font-size: 18px;
+            font-family: 'Dancing Script', cursive;
+
+        }
+        .button{
+            border: 1px solid #F7F7F7;
+            background-color: #c5d7e8;
+            border-radius:5px;
+            padding:10px;
+            width:10%;
+            font-family: 'Dancing Script', cursive;
+            font-size: 18px;
+
+        }
+
+        /*task_list*/
+
+        .header-bar{
+            display:flex;
+            justify-content: space-between;
+            color:white;
+            padding: 10px;
+            border-radius:5px;
+            background: linear-gradient(90deg, #054277 , #76aadc, #054277);
+        }
+        .logout{
+            color: white;
+            text-decoration: none;
+            font-size: 25px;
+
+        }
+        .my-todo{
+            font-size: 25px;
+            color: #054277;
+        }
+        .add-link{
+            text-decoration: none;
+            display: inline-block;
+            font-size:18px;
+            margin: 20px 0;
+            background: #c5d7e8;
+            padding:10px;
+            width:10%;
+            border-radius: 5px;
+        }
+        .search-form{
+            display:inline-block;
+        }
+        .todo-title{
+            color: #054277;
+            font-size:25px;
+            margin: 20px 0;
+        }
+        .task-wrapper{
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+            padding: 20px;
+            border-top: 1px solid #c5d7e8;
+        }
+        .task-title{
+            display:flex;
+        }
+        .task-complete-icon{
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            border: 1px solid #c5d7e8;
+            background-color: #054277;
+            margin-right:10px;
+
+        }
+        .task-incomplete-icon{
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            border: 1px solid #5F98C9;
+            background-color: white;
+            margin-right:10px;
+        }
+        .complete-text{
+            text-decoration: line-through;
+            color: #054277;
+        }
+        .crud-link{
+            display:inline-block;
+            text-decoration: none;
+            color: #054277;
+        }
+        .delete-link{
+            text-decoration: none;
+            font-size:22px;
+            font-weight:900;
+            line-height: 0;
+        }
+
+    </style>
+
+</head>
+<body>
+<!--    common to all-->
+<div class="container">
+    <p class="todo-para">
+
+        {% load static %}
+        <img src="{% static 'base/media/todos.png' %}" class="todo-image" alt="">
+        <span class="todos">TODO'S
+        </span>
+        <span class="saying">Prepare your todo list and make sure you do them.</span>
+    </p>
+
+
+
+<!--specific to pages-->
+    <div class="main-container">
+        {% block main%}
+        {% endblock%}
+    </div>
+
+<!--    common to all-->
+    <div class="saying-para">
+        <p class="saying">
+            “Someday is not a day of the week.” ― Janet Dailey
+        </p>
+        <p class="saying">
+            “Only put off until tomorrow what you are willing to die having left undone” ― Pablo Picasso
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
